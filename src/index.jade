@@ -1,0 +1,196 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    link(rel="apple-touch-icon", sizes="57x57", href="/apple-touch-icon-57x57.png")
+    link(rel="apple-touch-icon", sizes="60x60", href="/apple-touch-icon-60x60.png")
+    link(rel="apple-touch-icon", sizes="72x72", href="/apple-touch-icon-72x72.png")
+    link(rel="apple-touch-icon", sizes="76x76", href="/apple-touch-icon-76x76.png")
+    link(rel="apple-touch-icon", sizes="114x114", href="/apple-touch-icon-114x114.png")
+    link(rel="apple-touch-icon", sizes="120x120", href="/apple-touch-icon-120x120.png")
+    link(rel="apple-touch-icon", sizes="144x144", href="/apple-touch-icon-144x144.png")
+    link(rel="apple-touch-icon", sizes="152x152", href="/apple-touch-icon-152x152.png")
+    link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon-180x180.png")
+    link(rel="icon", type="image/png", href="/favicon-32x32.png", sizes="32x32")
+    link(rel="icon", type="image/png", href="/favicon-194x194.png", sizes="194x194")
+    link(rel="icon", type="image/png", href="/favicon-96x96.png", sizes="96x96")
+    link(rel="icon", type="image/png", href="/android-chrome-192x192.png", sizes="192x192")
+    link(rel="icon", type="image/png", href="/favicon-16x16.png", sizes="16x16")
+    link(rel="manifest", href="/manifest.json")
+    meta(name="msapplication-TileColor", content="#2d89ef")
+    meta(name="msapplication-TileImage", content="/mstile-144x144.png")
+    meta(name="theme-color", content="#2ecc71")
+    title Luc Matagne
+
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body#body.hidden.animated
+    div.hidden
+      script.
+        var images = new Array();
+        function preload() {
+          for (i = 0; i < preload.arguments.length; i++) {
+            images[i] = new Image();
+            images[i].src = preload.arguments[i];
+          }
+        }
+        function isRetinaDisplay() {
+          if (window.matchMedia) {
+            var mq = window.matchMedia("only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");
+            return (mq && mq.matches || (window.devicePixelRatio > 1)); 
+          }
+        }
+        //- if ( isRetinaDisplay() ) {
+        //-   preload(
+        //-     "/images/header-dev@2x.jpg",
+        //-     "/images/header-graph@2x.jpg",
+        //-     "/images/header-photo@2x.jpg"
+        //-   )
+        //- } else {
+          preload(
+            "/images/header-dev.jpg",
+            "/images/header-graph.jpg",
+            "/images/header-photo.jpg"
+          )  
+        //- }
+        
+    header.header.header--dev
+      h1.header__title Luc Matagne
+      svg#logo.header__logo.h1(viewBox="460.1 220.1 359.7 359.7")
+        polygon#triangle(fill="#2ECC71", points="460.1,316.5 819.9,220.1 723.5,579.9 ")
+        path#LM(fill="#FFFFFF", d="M691.9,452.8c-2.9,0-5.5-0.7-7.5-2.1c-1.2-0.9-3.1-2.3-5.5-4.4l-2.4-2l0.4-3.1c0.1-1.2,0.4-3.2,0.7-6c0.3-2.8,0.5-5.7,0.8-8.8c0.3-3.1,0.5-5.7,0.7-8.1c0.1-1.9,0.3-3.1,0.3-3.6v-0.4c0.4-4.4,0.7-8.1,0.8-11.2c0.1-3.1,0.3-5.9,0.4-8.4c0.1-2.4,0.3-4.8,0.3-7.1s0.1-5.1,0.1-8.1v-0.3c0.1-2.8,0.3-5.2,0.3-7.2s0.1-4.4,0.1-7.2c0-0.4,0-2.4,0.1-6.1c0.1-3.6,0.1-7.9,0.1-12.5c0-4.5-0.1-9.2-0.3-14c0-0.7,0-1.3-0.1-2c-0.1,0.1-0.3,0.4-0.5,0.5c-2.8,3.1-5.6,6.8-8.3,11.1c-2.7,4.4-5.3,9.1-7.7,14s-4.5,9.6-6.1,13.9c-1.2,3.2-10.5,21.9-13.3,27.6c-3.1,6.1-6,12-8.3,16.5c-4.3,8.4-4.8,9.5-6.7,10.1c-4.4,2.7-16,8.3-23.9,9.9c-3.1,0.7-6.3,1.2-9.1,1.7c-3.7,0.7-7.6,1.3-9.2,1.9c-3.3,1.1-6.3,1.7-8.7,2.1l-0.7,0.1c-5.5,0.3-9.9,0-13.3-0.7c-4.8-0.9-8.8-4.1-11.9-9.6l-0.5-0.8l-0.1-0.9c-0.5-3.1-0.7-6.1-0.3-9.3c0.4-2.8,1.1-5.9,2.1-9.3c0.9-3.3,2.1-6.9,3.5-10.8c1.3-3.9,2.9-8.3,4.7-13.3c5.1-13.7,9.2-25.3,12.4-34.8c3.1-9.5,5.5-17.2,7.2-23.2c1.7-6,2.8-10.5,3.5-13.5c0.7-3.2,1.1-5.3,1.3-6.4l0.9-4.3l4.4-0.3c0.5,0,1.1-0.1,1.6-0.3c1.2-0.3,2.4-0.5,3.7-0.5c1.3,0,2.8,0.1,4.3,0.4c1.6,0.4,3.3,1.1,5.2,2.3l3.5,2.1l-0.8,4c-0.1,0.9-0.7,2.5-2.3,7.2c-1.2,3.2-2.7,7.2-4.4,12l-5.9,15.7c-2.1,5.9-4.4,11.9-6.7,18c-2.3,6-4.4,12.1-6.7,18.3c-2.1,6-4,11.6-5.5,16.7c-1.6,5.1-2.8,9.7-3.7,13.6c-0.8,3.1-1.1,5.1-1.1,6.1c0.3,0.4,0.7,0.5,1.2,0.7c1.9,0.5,4,0.7,6.5,0.4c0.8-0.1,1.7-0.1,2.8-0.3c3.5-0.3,8.8-0.7,16-2c7.9-1.5,16-4.4,19.3-5.9c3.3-5.3,14.3-30.3,19.7-42.5c2.5-5.6,4.7-10.4,6-13.2c2.3-4.9,4.9-10.3,7.7-15.6c2.8-5.3,5.7-10.1,8.7-14.3c3.6-5.1,6.7-8.8,9.5-11.5c0.9-0.9,1.5-1.5,1.7-2c0.5-0.7,1.3-1.6,2.7-2.5c2.1-1.3,4.9-2.4,7.7-3.1c2.9-0.7,6.1-0.4,9.1,0.7c2.9,0.9,5.2,3.2,6.7,6.8c0.9,2.3,1.7,4.9,2.3,7.6c0.5,2.7,0.9,5.3,1.1,8c0.1,2.7,0.3,4.4,0.3,5.6c0,3.6-0.1,6.9-0.3,10.1c0,0.7-0.1,1.5-0.1,2.1c0.8-1.2,1.7-2.3,2.7-3.3c3.1-3.7,8.8-7.3,10.5-7.7c1.6-0.4,1.6-0.4,1.6-0.4c0.4,0,0.8,0,1.2,0c5.6,0,9.6,3.1,11.3,8.5c1.1,3.5,1.9,8,2.3,13.1v0.5c0,0,0,0.7,0.1,3.2c0.1,1.9,0.3,4.1,0.5,6.5c0.1,2.1,0.4,4.5,0.5,6.8c1.2-1.6,2.3-3.2,3.5-4.7c2.3-2.9,4.7-5.5,7.1-7.6c2.9-2.5,5.9-4.1,8.9-4.9h0.1c0.8-0.1,1.6-0.3,2.3-0.3c2.3,0,6.7,0.8,9.7,6.1c1.9,3.1,3.2,7.1,4.1,12c0.8,4.4,1.6,9.5,2,15.1c0.5,5.3,1.1,10.7,1.6,15.7c0.5,4.9,1.2,9.6,1.9,13.9c0.8,4.5,1.7,6.7,2.4,7.7l3.9,6l-6.7,2.5c-1.5,0.5-2.9,0.8-4.3,0.8l0,0c-2.4,0-4.5-0.8-6.4-2.3c-1.1-0.8-2.3-1.6-3.6-2.3l-2.1-1.1l-0.8-2.3c-0.5-1.7-0.9-4.3-1.2-7.9c-0.1-2.8-0.4-5.9-0.7-9.2l-0.1-0.9c-0.3-3.9-0.5-7.7-0.8-11.9c-0.3-4-0.7-7.7-1.1-10.9c-0.3-2-0.5-3.7-0.9-5.2c-2.1,2.3-3.9,4.4-5.3,6.5c-2.3,3.2-4.1,6.1-5.5,8.7c-1.3,2.4-2.3,4.5-2.8,6.1c-0.7,2-1.1,3.2-1.2,3.6l-0.1,0.1c-0.9,2.4-1.9,5.7-2.8,10.1c-0.9,4.4-1.5,9.1-1.7,14l-0.3,4.3l-4.1,1.1c-0.9,0.3-1.9,0.4-2.7,0.4c-2.9,0-5.5-1.6-6.7-4.1c-0.1-0.1-0.4-0.4-0.9-0.9l-2.5-2.3l0.7-3.2c0-0.3,0.1-1.3,0.3-4.8c0.1-3.2,0-7.2,0-11.9c-0.1-4.8-0.3-10-0.4-15.5c-0.3-5.5-0.5-10.9-0.8-16.1c-0.3-4.5-0.7-8.8-1.2-12.7c-0.8,1.2-1.6,2.4-2.3,3.6c-1.2,2.1-1.5,2.8-1.5,2.8l-0.1,0.4c-2.7,6.4-4.8,11.9-6.1,16.3c-1.3,4.3-2.4,7.9-2.9,10.8c-0.5,2.9-0.9,5.3-1.1,7.2c-0.1,2.4-0.4,4.7-0.8,7.1l-0.7,8.4c-0.1,2.3-0.3,4.5-0.3,6.8s0.1,4.8,0.1,7.5c0.1,2.8,0.4,6,0.7,9.7l0.4,5.9l-6,0.4C692.7,452.8,692.3,452.8,691.9,452.8z")
+      div.header__slider.row
+        div.slider__item
+          h2.spec__title.h1 Développeur
+          p Je réalise des sites web de A à Z !
+          p Sur base de votre demande je vous crée votre propre site Internet adapté à vos besoins mais aussi et surtout à ceux de vos utilisateurs !
+        div.slider__item
+          h2.spec__title.h1 Graphiste
+          p Vous avez besoin d’une nouvelle identité graphique ? Un flyer ou une affiche ?
+          p Je peux également vous aider dans ce domaine !
+        div.slider__item
+          h2.spec__title.h1 Photographe
+          p Je suis également photographe, je peux immortaliser tout vos événements qu'ils soient professionels ou privé.
+          p Je réalise aussi des vidéos de qualité professionelle de la prise de vue au montage.
+      div.row.header__icons.hidden
+        div.header__icon.col-3-16.col-sm-2-16.col-md-1-8
+          a.header__icon-link.header__icon-link--activated(href="#", title="Afficher informations sur le développement", data-n="0", data-name="dev")
+            svg.header__icon-svg(viewBox="-13.25 -14 50 50")
+              path.fill--white(d="M9.4,16.6L4.8,12l4.6-4.6L8,6l-6,6l6,6L9.4,16.6z M14.6,16.6l4.6-4.6l-4.6-4.6L16,6l6,6l-6,6L14.6,16.6z")
+        div.header__icon.col-3-16.col-sm-2-16.col-md-1-8
+          a.header__icon-link(href="#", title="Afficher informations sur le graphisme", data-n="1", data-name="graph")
+            svg.header__icon-svg(viewBox="-13.25 -14 50 50")
+              path.fill--white(d="M7,14c-1.7,0-3,1.3-3,3c0,1.3-1.2,2-2,2c0.9,1.2,2.5,2,4,2c2.2,0,4-1.8,4-4C10,15.3,8.7,14,7,14z M20.7,4.6l-1.3-1.3c-0.4-0.4-1-0.4-1.4,0l-9,9l2.8,2.8l9-9C21.1,5.7,21.1,5,20.7,4.6z")
+        div.header__icon.col-3-16.col-sm-2-16.col-md-1-8
+          a.header__icon-link(href="#", title="Afficher informations sur la photographie", data-n="2", data-name="photo")
+            svg.header__icon-svg(viewBox="-13.25 -14 50 50")
+              circle.fill--white(cx="12", cy="12", r="3.2")
+              path.fill--white(d="M9,2L7.2,4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6c0-1.1-0.9-2-2-2h-3.2L15,2H9z M12,17c-2.8,0-5-2.2-5-5s2.2-5,5-5s5,2.2,5,5S14.8,17,12,17z")
+            
+    div.menu
+      div.row.menu__misc
+        a.menu__logo Luc Matagne
+        div#openMenu.menu__mobile-nav.col-3-4 Navigation
+      div.row
+        nav.navigation.row
+          div.navigation__item.col-1.col-md-1-4
+            a.navigation__link(href="#section-about") A propos
+          div.navigation__item.col-1.col-md-1-4
+            a.navigation__link(href="#section-skills") Compétences
+          //- div.navigation__item.col-1.col-md-1-4
+          //-   a.navigation__link(href="#section-history") Parcours
+          div.navigation__item.col-1.col-md-1-4
+            a.navigation__link(href="#section-contact") Contact
+            
+    main#main.main
+      section.row.content#section-about
+        div.col-1.col-md-6-16.center.wow.bounceInLeft(data-wow-offset="200")
+          img.content_self-photo(src="images/self.jpg", alt="Ma tête")
+        div.col-md-2-16
+        div.col-1.col-md-8-16.wow.bounceInRight(data-wow-offset="200")
+          h2.h2 Et si je vous parlais de moi&nbsp;?
+          p.lead Je suis un jeune développeur Web belge tout fraichement diplômé&nbsp;!
+          p
+            | J’aime découvrir les dernières technologies du web et surtout les utiliser de la façon la plus propre et efficace possible. 
+            | Quand je ne suis pas en train de m’arracher les cheveux sur une documentation en cours de construction on peut me retrouver 
+            | une manette à la main en train de parcourir le fabuleux royaume d’
+            a(href="https://fr.wikipedia.org/wiki/Hyrule", target="_blank", title="Quelques informations sur Hyrule") Hyrule
+            | &nbsp;!
+      
+      section.row.content#section-skills
+        h2.h2.col-1.wow.fadeIn(data-wow-offset="200") Je sais faire des trucs aussi&nbsp;!
+        
+        ul.chart__legend.wow.fadeInUp(data-wow-offset="200")
+          li#label01.chart__legend-item
+              span.chart__legend-label
+                strong Hein&nbsp;?!
+                br
+                | Connais pas...
+          li#label02.chart__legend-item
+            span.chart__legend-label
+              strong Les bases
+              br
+              | J'ai lu la doc&nbsp;!
+          li#label03.chart__legend-item
+            span.chart__legend-label
+              strong Intermédiaire
+              br
+              | Mais je m'améliore&nbsp;!
+          li#label04.chart__legend-item
+            span.chart__legend-label
+              strong Doué&nbsp;!
+              br
+              | Sans me vanter
+          li#label05.chart__legend-item
+            span.chart__legend-label.chart__legend-label--doctor
+              strong Trust me&nbsp;! 
+              br
+              | I'm the 
+              a(href="https://www.youtube.com/watch?v=dTBGm7lWPH4", target="_blank") doctor
+              | &nbsp;!
+        ul#chart-data.chart__data
+          li#bar01.chart__data-item
+            div.chart__data-bar.chart__data-bar--dev
+              span.chart__data-label HTML/CSS
+          li#bar02.chart__data-item
+            div.chart__data-bar.chart__data-bar--dev
+              span.chart__data-label Javascript
+          li#bar03.chart__data-item
+            div.chart__data-bar.chart__data-bar--dev
+              span.chart__data-label WebComponents
+          li#bar04.chart__data-item
+            div.chart__data-bar.chart__data-bar--dev
+              span.chart__data-label PHP/MYSQL
+          li#bar05.chart__data-item
+            div.chart__data-bar.chart__data-bar--dev
+              span.chart__data-label Jeux vidéos
+          li#bar06.chart__data-item
+            div.chart__data-bar.chart__data-bar--graph
+              span.chart__data-label Photoshop
+          li#bar07.chart__data-item
+            div.chart__data-bar.chart__data-bar--graph
+              span.chart__data-label Illustrator
+          li#bar08.chart__data-item
+            div.chart__data-bar.chart__data-bar--photo
+              span.chart__data-label Lightroom
+          li#bar09.chart__data-item
+            div.chart__data-bar.chart__data-bar--photo
+              span.chart__data-label Première Pro
+    
+    footer.footer#section-contact
+      div.row.center
+        h1.h1.footer__title Besoin d'aide&nbsp;? Contactez moi&nbsp;!
+        a(href="mailto:me@luc-matagne.be").button.button--main me@luc-matagne.be
+        p.lead Retrouvez moi aussi sur les réseaux sociaux
+        ul.socials
+          li.socials__item
+            a.socials__link.socials__link--facebook(href="https://www.facebook.com/quelu.panda", target="_blank", title="Aller sur le compte Facebook") Facebook
+          li.socials__item
+            a.socials__link.socials__link--twitter(href="https://twitter.com/Quelu_", target="_blank", title="Aller sur le compte Twitter") Twitter
+          li.socials__item
+            a.socials__link.socials__link--youtube(href="https://www.youtube.com/c/SmilyPanda", target="_blank", title="Aller sur la chaine Youtube") Youtube
+          li.socials__item
+            a.socials__link.socials__link--github(href="https://github.com/Quelu", target="_blank", title="Aller sur le compte Github") Github
+            
+    script(src='build/build.js')

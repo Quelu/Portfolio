@@ -1,0 +1,471 @@
+@import 'kouto-swiss'
+@import './grid.css'
+@import 'animate.css/animate.css'
+
+// variables!
+
+body_color = #000
+body_selection = #a1d56f
+body_background = #fff
+
+logo_background = #2ecc71
+
+menu_background = #282828
+menu_color = #fff
+
+h3_color = #ecf0f1
+
+h1_line = 0.435em
+h2_line = 0.435em
+h3_line = 0.794117647em
+
+breakpoint_sm = only screen, min-width 35.5em
+breakpoint_md = only screen, min-width 48em
+breakpoint_lg = only screen, min-width 64em
+
+// base
+
+meyer-reset()
+normalize()
+
+body
+  font-family 'Gill Sans', Calibri, sans-serif
+  color body_color
+  background-color body_background
+  line-height 1.375em
+  font-weight 300
+
+::selection
+  background-color body_selection
+  color body_background
+
+img
+  width 100%
+
+p, ul, ol, pre, table, blockquote
+  margin-top 1.375em
+  margin-bottom 1.375em
+
+.hidden
+  display none
+
+.row
+  max-width 1040px
+  margin 0 auto
+  padding 0 1em
+  position relative
+
+  +media-query( breakpoint_lg )
+    padding 0
+
+.center
+  text-align center
+
+.h1
+  font-size 2.875em
+  font-weight 300
+  margin-top h1_line * 2
+  margin-bottom h1_line
+
+.h2
+  font-size 1.875em
+  font-weight 600
+  margin-bottom h2_line
+  line-height 1.375em
+
+.h3
+  font-size 3.25em
+  margin h3_line 0
+
+.h4
+  font-size 1.8125em
+
+.lead
+  font-size 1.8125em
+  font-weight 300
+  line-height 1.375em
+
+.header
+  position relative
+  text-align center
+  background-size cover
+  background-position center center
+  width 100%
+  color: #fff
+  z-index 1
+
+.header--dev
+  background-image url("../images/header-dev.jpg")
+
+.header--graph
+  background-image url("../images/header-graph.jpg")
+
+.header--photo
+  background-image url("../images/header-photo.jpg")
+
+.header__title
+  text-indent -9999px
+  margin 0
+  height 0
+
+.header__logo
+  width 25%
+  max-width 300px
+  min-width 150px
+  margin 60px auto
+
+.header__logo:hover
+  #triangle
+    animation: triHover 1s ease-in-out
+    stroke-width 2px
+
+.animateTriangle
+  animation: triHover 1s easing( "in-out-quad" )
+  stroke-width 2px
+
+#triangle
+  stroke #fff
+  stroke-width 0
+  stroke-width 1px
+
+  stroke-dasharray 0 0 1120
+  stroke-dashoffset -1120
+
+@keyframes triHover
+  0%
+    stroke-dashoffset -1120
+  50%
+    stroke-dashoffset 0
+  100%
+    stroke-dashoffset 1120
+
+.header__icon
+  margin: 100px 5%
+
+.header__icon-link
+  display block
+
+.header__icon-link--activated
+  background-color #fff
+  border-radius 3px
+
+.header__icon-link--activated .fill--white
+  fill #000
+
+.fill--white
+  fill #fff
+
+/////// Menu
+
+.menu
+  position relative
+  background-color menu_background
+  color menu_color
+  min-height 3.75em
+  width 100%
+  z-index 10
+
+.menu--sticked
+  position fixed
+  top 0
+  left 0
+  right 0
+
+.menu__logo
+  position absolute
+  top 0
+  left -10%
+  float left
+  display block
+  width 0
+  height 0
+  opacity 0
+  text-indent -9999px
+  background url("../images/logo.svg") 0 0 no-repeat
+
+  transition all .25s easing( "in-quad" )
+
+.menu--sticked .menu__logo
+  top -1.125em
+  left 0
+  width 50%
+  height 7.5em
+  opacity 1
+
+.menu__mobile-nav
+  float right
+  width 2em
+  height 2em
+  margin-top .75em
+  text-indent -9999px
+  background url("../images/icon_menu.svg") right center no-repeat
+  background-size contain
+  cursor pointer
+  z-index 11
+
+  +media-query( breakpoint_md )
+    display none
+
+.menu__misc::after
+  content ''
+  display block
+  clear both
+
+.navigation
+  box-sizing border-box
+  height 0
+  width 100%
+  overflow hidden
+  text-align center
+  line-height 3.75em
+
+  transition all .25s easing( "in-quad" )
+
+  +media-query( breakpoint_md )
+    height auto
+
+.navigation--open
+  height auto
+
++media-query( breakpoint_md )
+  .menu--sticked .navigation
+    width 80%
+
+.navigation__link
+  color #fff
+  display block
+  text-decoration none
+
+  &:hover
+    text-decoration underline
+
+/////// Content
+
+.main
+  position relative
+  background-color #fff
+  padding-top 3.75em !important
+  margin-bottom 37.5em
+  z-index 1
+
+.content
+  overflow hidden
+  margin 0 auto 3.75em
+  padding-bottom 1.75em
+
+/////// About
+
+.content_self-photo
+  max-height 300px
+  width auto
+  +media-query( breakpoint_md )
+    max-height none
+    width 100%
+
+/////// Skills
+
+.chart__legend-label--doctor
+  background url('../images/tardis.svg') no-repeat 100%
+  background-size contain
+  padding 0 1.875em 0 0
+
++media-query( only screen, max-width 47.999999em )
+  .chart__legend
+    position absolute
+    width 100%
+
+  .chart__legend-item
+    position relative
+    top 3.125em
+    width 19%
+    display inline-block
+
+  .chart__legend-label
+    position absolute
+    top -1em
+    right 0
+    font-size .875em
+    line-height 1
+    transform rotate(50deg)
+    transform-origin 100% 0
+    text-align right
+    width 8em
+
+  .chart__data
+    padding-top 6.250em
+    overflow hidden
+
+  .chart__data-label
+    color #fff
+    line-height 5em
+    font-size .938em
+    margin-left 1em
+
+  .chart__data-item
+    width 100%
+    border-left 1px solid menu_background
+
+  .chart__data-bar
+    height 4.688em
+
+  .chart__data-bar--dev
+    background url('../images/skills-hbar-dev.svg') no-repeat 100% 20%
+  .chart__data-bar--graph
+    background url('../images/skills-hbar-graph.svg') no-repeat 100% 20%
+  .chart__data-bar--photo
+    background url('../images/skills-hbar-photo.svg') no-repeat 100% 20%
+
+  #bar01 .chart__data-bar
+    width 90%
+  #bar02 .chart__data-bar
+    width 75%
+  #bar03 .chart__data-bar
+    width 60%
+  #bar04 .chart__data-bar
+    width 83%
+  #bar05 .chart__data-bar
+    width 100%
+  #bar06 .chart__data-bar
+    width 65%
+  #bar07 .chart__data-bar
+    width 55%
+  #bar08 .chart__data-bar
+    width 45%
+  #bar09 .chart__data-bar
+    width 60%
+
+
++media-query( breakpoint_md )
+  .chart__legend
+    position relative
+    float right
+    width 100%
+    display inline-block
+    margin-bottom 0
+
+  .chart__legend-item
+    position absolute
+    width 100%
+    border-top 1px solid rgba(0,0,0,.15)
+
+  .chart__legend-label
+    float right
+    text-align right
+    width 15%
+
+  #label01
+    top 18.672em
+  #label02
+    top 14.004em
+  #label03
+    top 9.336em
+  #label04
+    top 4.688em
+  #label05
+    top 0
+
+  .chart__data
+    float left
+    height 30em
+    margin 0
+    width 85%
+
+  .chart__data-item
+    position relative
+    width 11.111%
+    height 23.36em
+    display inline-block
+
+  .chart__data-label
+    position absolute
+    bottom -4.688em
+    width 7.813em
+    transform rotate(50deg)
+
+  .chart__data-bar
+    position absolute
+    bottom 0
+    width 100%
+    border-bottom 1px solid menu_background
+
+  .chart__data-bar--dev
+    background url('../images/skills-vbar-dev.svg') no-repeat 50% 0
+  .chart__data-bar--graph
+    background url('../images/skills-vbar-graph.svg') no-repeat 50% 0
+  .chart__data-bar--photo
+    background url('../images/skills-vbar-photo.svg') no-repeat 50% 0
+
+  #bar01 .chart__data-bar
+    height 90%
+  #bar02 .chart__data-bar
+    height 75%
+  #bar03 .chart__data-bar
+    height 60%
+  #bar04 .chart__data-bar
+    height 83%
+  #bar05 .chart__data-bar
+    height 100%
+  #bar06 .chart__data-bar
+    height 65%
+  #bar07 .chart__data-bar
+    height 55%
+  #bar08 .chart__data-bar
+    height 45%
+  #bar09 .chart__data-bar
+    height 60%
+
+/////// Footer
+
+.footer
+  position fixed
+  bottom 0
+  left 0
+  right 0
+  height 37.5em
+  background-color menu_background
+  color #fff
+  z-index 0
+
+.footer__title
+  margin-top 150px
+  line-height 1.325em
+
+.button
+  box-sizing border-box
+  display block
+  padding 1em 1.875em
+  color #fff
+  text-decoration none
+  font-size 1.125em
+  transition all 0.5s ease
+
+  +media-query( breakpoint_md )
+    width 30%
+    margin 0 auto
+
+.button--main
+  background-color logo_background
+
+  &:hover
+    background-color lighten( logo_background, 10 )
+    box-shadow 4px 4px 10px rgba(0,0,0,0.4)
+
+.socials__item
+  size(3.125em)
+  display inline-block
+  text-indent -9999px
+  margin 1.25em
+
+.socials__link
+  display block
+  width 100%
+  height 100%
+
+.socials__link--facebook
+  background url("../images/icon-facebook.svg") center center no-repeat
+.socials__link--twitter
+  background url("../images/icon-twitter.svg") center center no-repeat
+.socials__link--youtube
+  background url("../images/icon-youtube.svg") center center no-repeat
+.socials__link--github
+  background url("../images/icon-github.svg") center center no-repeat
