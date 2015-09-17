@@ -4,11 +4,12 @@
 
 // variables!
 
+logo_background = #2ecc71
+
 body_color = #000
 body_selection = #a1d56f
 body_background = #fff
-
-logo_background = #2ecc71
+light_background = lighten( logo_background, 45 )
 
 menu_background = #282828
 menu_color = #fff
@@ -17,7 +18,7 @@ h3_color = #ecf0f1
 
 h1_line = 0.435em
 h2_line = 0.435em
-h3_line = 0.794117647em
+h3_line = 0.794em
 
 breakpoint_sm = only screen, min-width 35.5em
 breakpoint_md = only screen, min-width 48em
@@ -225,7 +226,7 @@ p, ul, ol, pre, table, blockquote
     height auto
 
 .navigation--open
-  height auto
+  height 15em
 
 +media-query( breakpoint_md )
   .menu--sticked .navigation
@@ -417,8 +418,115 @@ p, ul, ol, pre, table, blockquote
 /////// loisirs
 
 .content__video
-  max-width 640px
+  max-width 40em
   width 100%
+
+/////// Timeline
+
+.timeline
+  position relative
+  margin: 3em 0
+
+  &::before
+    content ''
+    position absolute
+    top 0
+    left 1.125em
+    height 100%
+    width 0.25em
+    background logo_background
+
+.timeline__block
+  position relative
+  margin 1.875em 0
+
+.timeline__img
+  position absolute
+  top 0
+  left 0
+  size( 2.5em )
+  border-radius 50%
+  box-shadow 0 0 0 .25em white, inset 0 .125em 0 rgba(0, 0, 0, 0.08), 0 .188em 0 .25em rgba(0, 0, 0, 0.05)
+
+.timeline__img--school
+  background-color #2196F3
+.timeline__img--job
+  background-color #FFC107
+.timeline__img--misc
+  background-color #009688
+
+.timeline__img img
+  position relative
+  left 50%
+  top 50%
+  display block
+  size(1.5em)
+  margin-left -.75em
+  margin-top -.75em
+
+.timeline__content
+  position relative
+  margin-left 3.75em
+  background light_background
+  border-radius 0.25em
+  padding 1em
+  border-radius 0.25em
+
+  &::before
+    content ''
+    position absolute
+    top 1em
+    size( 1em )
+    right 100%
+    triangle( left, .625em, light_background )
+
+.timeline__title
+  font-weight 600
+
+.timeline__date
+  font-weight 600
+  color logo_background
+
++media-query( breakpoint_md )
+  .timeline
+    &::before
+      left 50%
+
+  .timeline__img
+    size( 3.750em )
+    left 50%
+    margin-left -1.875em
+
+  .timeline__block
+    clearfix()
+
+
+  .timeline__content
+    margin-left 0
+    width 40%
+
+  .timeline__block:nth-child(odd)
+    .timeline__content
+      &::before
+        left 100%
+        triangle( right, .625em, light_background )
+    .timeline__date
+      position absolute
+      top .5em
+      right auto
+      left 132%
+      width 50%
+
+  .timeline__block:nth-child(even)
+    .timeline__content
+      float right
+    .timeline__date
+      position absolute
+      top .5em
+      left auto
+      right 132%
+      text-align right
+      width 100%
 
 /////// Footer
 
@@ -433,7 +541,7 @@ p, ul, ol, pre, table, blockquote
   z-index 0
 
 .footer__title
-  margin-top 150px
+  margin-top 140px
   line-height 1.325em
 
 .button
@@ -460,7 +568,7 @@ p, ul, ol, pre, table, blockquote
   size(3.125em)
   display inline-block
   text-indent -9999px
-  margin 1.25em
+  margin 1em
 
 .socials__link
   display block

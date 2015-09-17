@@ -9,16 +9,33 @@ $(function(){
    * media-query
    **/
 
+  var footerHeight = $( '.footer' ).height();
+  var windowResize = function () {
+    if ( $( window ).width() > 768 ) {
+      // If screen is medium
+      $( '.chart__data' ).addClass( 'wow' ).addClass( 'slideInLeft' ).attr( 'data-wow-offset', 200 );
+      $( '.chart__data-bar' ).removeClass( 'slideInLeft' );
+      $( '.timeline__content' ).removeClass( 'fadeInRight' );
+      $( '.timeline__block:odd .timeline__content' ).addClass( 'wow' ).addClass( 'fadeInRight' );
+      $( '.timeline__block:even .timeline__content' ).addClass( 'wow' ).addClass( 'fadeInLeft' );
 
-  if ( $( window ).width() > 768 ) {
-    // If screen is medium
-    $( '.chart__data' ).addClass( 'wow' ).addClass( 'slideInLeft' );
-    $( '.chart__data-bar' ).addClass( 'wow' ).removeClass( 'slideInLeft' );
-  } else {
-    // Screen is small
-    $( '.chart__data' ).addClass( 'wow' ).removeClass( 'slideInLeft' );
-    $( '.chart__data-bar' ).addClass( 'wow' ).addClass( 'slideInLeft' );
+      $( '.footer .lead, .socials' ).show();
+      $( '.footer' ).css('height', footerHeight + 'px');
+    } else {
+      // Screen is small
+      $( '.chart__data' ).removeClass( 'slideInLeft' );
+      $( '.chart__data-bar' ).addClass( 'wow' ).addClass( 'slideInLeft' );
+      $( '.timeline__content' ).addClass( 'wow' ).addClass( 'fadeInRight' );
+      if ( $(window).height()  < 500  ) {
+        $( '.footer' ).css('height', '350px');
+        $( '.footer .lead, .socials' ).hide();
+      }
+    }
   }
+
+  windowResize();
+
+  $(window).resize( windowResize );
 
   wow.init();
 
