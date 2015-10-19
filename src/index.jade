@@ -21,6 +21,18 @@ html
 		meta(name="msapplication-TileColor", content="#2d89ef")
 		meta(name="msapplication-TileImage", content="/mstile-144x144.png")
 		meta(name="theme-color", content="#2ecc71")
+
+		meta(property='og:title', content='Luc Matagne')
+		meta(property='og:site_name', content='Luc Matagne')
+		meta(property='og:url', content='http://luc-matagne.be')
+		meta(property='og:description', content='Site personnel de Luc Matagne, jeune développeur Web belge tout fraichement diplômé !')
+		meta(property='og:type', content='website')
+		meta(property='og:image', content='http://luc-matagne.be/favicon-194x194.png')
+
+		meta(name='description', content='Site personnel de Luc Matagne, jeune développeur Web belge tout fraichement diplômé !')
+		meta(name='robots', content='index, nofollow')
+		meta(name='author', content='Luc Matagne')
+
 		title Luc Matagne
 
 		link(rel='stylesheet', type='text/css', href='build/build.css')
@@ -38,7 +50,7 @@ html
 				function isRetinaDisplay() {
 					if (window.matchMedia) {
 						var mq = window.matchMedia("only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen	and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");
-						return (mq && mq.matches || (window.devicePixelRatio > 1)); 
+						return (mq && mq.matches || (window.devicePixelRatio > 1));
 					}
 				}
 				//- if ( isRetinaDisplay() ) {
@@ -52,9 +64,9 @@ html
 						"/images/header-dev.jpg",
 						"/images/header-graph.jpg",
 						"/images/header-photo.jpg"
-					)	
+					)
 				//- }
-				
+
 		header.header.header--dev
 			h1.header__title Luc Matagne
 			svg#logo.header__logo.h1(viewBox="460.1 220.1 359.7 359.7")
@@ -87,7 +99,7 @@ html
 						svg.header__icon-svg(viewBox="-13.25 -14 50 50")
 							circle.fill--white(cx="12", cy="12", r="3.2")
 							path.fill--white(d="M9,2L7.2,4H4C2.9,4,2,4.9,2,6v12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6c0-1.1-0.9-2-2-2h-3.2L15,2H9z M12,17c-2.8,0-5-2.2-5-5s2.2-5,5-5s5,2.2,5,5S14.8,17,12,17z")
-						
+
 		div.menu
 			div.row.menu__misc
 				a.menu__logo Luc Matagne
@@ -102,7 +114,7 @@ html
 						a.navigation__link(href="#section-history") Parcours
 					div.navigation__item.col-1.col-md-1-4
 						a.navigation__link(href="#section-contact") Contact
-						
+
 		main#main.main
 			section.row.content#section-about
 				div.col-1.col-md-6-16.center.wow.bounceInLeft(data-wow-offset="200")
@@ -112,15 +124,15 @@ html
 					h2.h2 Et si je vous parlais de moi&nbsp;?
 					p.lead Je suis un jeune développeur Web belge tout fraichement diplômé&nbsp;!
 					p
-						| J’aime découvrir les dernières technologies du web et surtout les utiliser de la façon la plus propre et efficace possible. 
-						| Quand je ne suis pas en train de m’arracher les cheveux sur une documentation en cours de construction on peut me retrouver 
+						| J’aime découvrir les dernières technologies du web et surtout les utiliser de la façon la plus propre et efficace possible.
+						| Quand je ne suis pas en train de m’arracher les cheveux sur une documentation en cours de construction on peut me retrouver
 						| une manette à la main en train de parcourir le fabuleux royaume d’
 						a(href="https://fr.wikipedia.org/wiki/Hyrule", target="_blank", title="Quelques informations sur Hyrule") Hyrule
 						| &nbsp;!
-			
+
 			section.row.content#section-skills
 				h2.h2.col-1.wow.fadeIn(data-wow-offset="200") Je sais faire des trucs aussi&nbsp;!
-				
+
 				ul.chart__legend.wow.fadeInUp(data-wow-offset="100")
 					li#label01.chart__legend-item
 							span.chart__legend-label
@@ -144,9 +156,9 @@ html
 							| Sans me vanter
 					li#label05.chart__legend-item
 						span.chart__legend-label.chart__legend-label--doctor
-							strong Trust me&nbsp;! 
+							strong Trust me&nbsp;!
 							br
-							| I'm the 
+							| I'm the
 							a(href="https://www.youtube.com/watch?v=dTBGm7lWPH4", target="_blank") doctor
 							| &nbsp;!
 				ul#chart-data.chart__data
@@ -181,10 +193,10 @@ html
 				div.col-1.col-md-5-16.wow.slideInLeft(data-wow-offset="100")
 					h2.h2 Un de mes loisirs
 					p Je l'avoue, j'ai tous les stéréotypes du Geek. J'aime les séries, les films, les mangas, les jeux vidéo et j'en passe. C'est pourquoi je me rends souvent en convention pour y dépenser mon argent en figurines ou autres choses complètement inutiles mais indispensables.
-					p 
-						| Mais depuis quelques années, je réalise des vidéos, de la prise de vue au montage, regroupant les 
+					p
+						| Mais depuis quelques années, je réalise des vidéos, de la prise de vue au montage, regroupant les
 						a(href="https://fr.wikipedia.org/wiki/Cosplay") cosplayers
-						|	présents dans la convention sous le pseudonyme de 
+						|	présents dans la convention sous le pseudonyme de
 						a(href="https://www.youtube.com/c/SmilyPanda") Smily Panda
 						| &nbsp;!
 				div.col-md-1-16
@@ -245,10 +257,10 @@ html
 							img(src="images/icon_misc.svg", alt="Picture")
 						div.timeline__content(data-wow-offset="100")
 							h3.timeline__title Développement d'Analiz
-							p 
-								| Développement d'une application dans le cadre de mon projet de fin d'études. 
+							p
+								| Développement d'une application dans le cadre de mon projet de fin d'études.
 								a(href="https://analiz-app.github.io/") Analiz
-								|  est une application javascript native grâce à Electron.
+								|	est une application javascript native grâce à Electron.
 							span.timeline__date 2015
 
 		footer.footer#section-contact
@@ -264,6 +276,8 @@ html
 					li.socials__item
 						a.socials__link.socials__link--youtube(href="https://www.youtube.com/c/SmilyPanda", target="_blank", title="Aller sur la chaine Youtube") Youtube
 					li.socials__item
+						a.socials__link.socials__link--linkedin(href="https://www.linkedin.com/in/lucmatagne", target="_blank", title="Aller sur le profil Linkedin") Linkedin
+					li.socials__item
 						a.socials__link.socials__link--github(href="https://github.com/Quelu", target="_blank", title="Aller sur le compte Github") Github
-						
+
 		script(src='build/build.js')
