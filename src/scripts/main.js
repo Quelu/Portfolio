@@ -39,7 +39,6 @@ $(function(){
 
   wow.init();
 
-
   $( 'body' ).removeClass( 'hidden' ).addClass( 'fadeIn' );
 
   /**
@@ -119,5 +118,47 @@ $(function(){
       }
     }
   });
+
+  /**
+   * Get the shows informations
+   */
+
+  var getLastWatchedShow = function () {
+    $.ajax({
+      type: 'GET',
+      url: 'https://api-v2launch.trakt.tv/users/quelu/history/episode?extended=images&limit=1',
+      contentType: 'application/json',
+
+      xhrFields: {
+        withCredentials: false
+      },
+
+      headers: {
+        'trakt-api-version': '2',
+        'trakt-api-key': '9c8f8c27b883b02248364512148d981fffb7d8681eb8f30ce03a1087b0f20e24'
+      },
+
+      success: function( data ) {
+        $( '#section-shows' ).removeClass( 'hidden' );
+        var episode = data[0].episode;
+        var show = data[0].show;
+
+        $( '#show-title' ).text( show.title + ' : ' );
+        $( '#episode-image' ).attr( 'src', episode.images.screenshot.full );
+        $( '#episode-title' ).text( episode.title );
+        $( '#episode-number' ).text( 'S' + twoDigitNumber( episode.season ) + 'E' + twoDigitNumber( episode.number ) );
+      },
+
+      error: function() {
+
+      }
+    });
+  }
+
+  function twoDigitNumber( n ){
+    return n > 9 ? "" + n: "0" + n;
+  }
+
+  getLastWatchedShow();
 
 });
