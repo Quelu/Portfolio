@@ -19,7 +19,7 @@ jobs:
     - name: GitHub Pages
       uses: crazy-max/ghaction-github-pages@v1.2.5
       with:
-        repo: https://github.com/Quelu/quelu.github.io.git
+        repo: Quelu/quelu.github.io
         target_branch: master
         build_dir: dist
         committer_name: Quelu
