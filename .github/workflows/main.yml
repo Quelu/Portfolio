@@ -24,3 +24,5 @@ jobs:
         build_dir: dist
         committer_name: Quelu
         committer_email: ${{ secrets.USER_EMAIL }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
