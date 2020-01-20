@@ -25,4 +25,4 @@ jobs:
         committer_name: Quelu
         committer_email: ${{ secrets.USER_EMAIL }}
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
