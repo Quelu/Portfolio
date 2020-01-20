@@ -1,6 +1,5 @@
-window.$ = require('jquery');
-var wowjs = require('wowjs');
-
+window.$ = require('@bower_components/jquery/dist/jquery');
+var wowjs = require('@bower_components/wowjs/dist/wow');
 
 $(function(){
   var wow = new wowjs.WOW();
