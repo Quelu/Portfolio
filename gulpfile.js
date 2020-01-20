@@ -126,7 +126,11 @@ gulp.task("deploy", ["build"], function(done) {
     {
       logger: gutil.log,
       branch: "master",
-      repo: "https://github.com/Quelu/quelu.github.io.git"
+      repo: "https://github.com/Quelu/quelu.github.io.git",
+      user: {
+        name: "Quelu",
+        email: process.env.USER_EMAIL
+      }
     },
     done
   );
