@@ -15,4 +15,12 @@ jobs:
       with:
         node-version: '10.x'
     - run: yarn
-    - run: yarn gulp deploy
+    - run: yarn gulp
+    - name: GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v1.2.5
+      with:
+        repo: https://github.com/Quelu/quelu.github.io.git
+        target_branch: master
+        build_dir: ./build
+        committer_name: Quelu
+        committer_email: ${{ secrets.USER_EMAIL }}
